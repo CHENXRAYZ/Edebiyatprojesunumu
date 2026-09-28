@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orhan Veli - Anlatamam Şiiri Zihin Haritası Sunumu</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Başlık Alanı */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        /* Şiir Kartı Alanı */
+        .poem-card {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        .poem-card h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .poem-text {
+            font-style: italic;
+            font-size: 1.1em;
+            white-space: pre-line;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .poem-author {
+            margin-top: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #e0e0e0;
+        }
+
+        /* Navigasyon / Sekmeler */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            background: #e0e0e0;
+            color: #333;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Zihin Haritası Izgarası */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-top: 6px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.25em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .card ol {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            font-size: 0.98em;
+        }
+
+        .card li strong {
+            color: #1a252f;
+        }
+
+        /* Slayt Modu Alanı */
+        .slide-view {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            min-height: 350px;
+            position: relative;
+        }
+
+        .slide-content h3 {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .slide-content ol {
+            padding-left: 25px;
+            font-size: 1.1em;
+        }
+
+        .slide-content li {
+            margin-bottom: 15px;
+        }
+
+        .slide-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .slide-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .slide-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ZİHİN HARİTASI İNCELEMESİ</h1>
+        <p>9. Sınıf Türk Dili ve Edebiyatı Ders Sunumu</p>
+    </header>
+
+    <!-- En Üstte Şiir Alanı -->
+    <div class="poem-card">
+        <h2>ANLATAMAM</h2>
+        <div class="poem-text">
+Ağlasam sesimi duyar mısınız,
+Mısralarımda;
+Dokunabilir misiniz,
+Gözyaşlarıma, ellerinizle?
+
+Bilmezdim şarkıların bu kadar güzel,
+Kelimelerinse kifayetsiz olduğunu
+Bu derde düşmeden önce.
+
+Bir yer var, biliyorum;
+Her şeyi söylemek mümkün;
+Epeyce yaklaşmışım, duyuyorum;
+Anlatamıyorum.
+        </div>
+        <div class="poem-author">— Orhan Veli Kanık</div>
+    </div>
+
+    <!-- Görünüm Seçimi (Izgara vs Slayt) -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchView('grid')">Tüm Analiz (Zihin Haritası)</button>
+        <button class="tab-btn" onclick="switchView('slide')">Slayt / Sunum Modu</button>
+    </div>
+
+    <!-- Izgara Görünümü (Her grupta 3 madde) -->
+    <div id="gridView" class="grid-container">
+        <!-- 1. Grup -->
+        <div class="card">
+            <h3>1. İmgeler, Çağrışımlar ve Söz Sanatları</h3>
+            <ol>
+                <li><strong>İmgeler ve Çağrışımlar:</strong> "Mısralarda duyulan ses" ve "gözyaşlarına dokunabilme" ifadeleriyle yalnızlık, çaresizlik ve anlaşılma arzusu çağrıştırılır.</li>
+                <li><strong>Tecahül-i Ârif (Bilmezlikten Gelme):</strong> <em>"Bilmeyezdim şarkıların bu kadar güzel / Kelimelerinse kifayetsiz olduğunu"</em> dizelerinde bildiği gerçeği bilmezlikten gelir.</li>
+                <li><strong>İstifham (Soru Sorma):</strong> <em>"Ağlasam sesimi duyar mısınız...?"</em> ve <em>"Dokunabilir misiniz...?"</em> sorularıyla şair okuyucuya yönelerek duygu yoğunluğunu artırır.</li>
+            </ol>
+        </div>
+
+        <!-- 2. Grup -->
+        <div class="card">
+            <h3>2. Duygular ile Ses, Ritim ve Vurgu İlişkisi</h3>
+            <ol>
+                <li><strong>Duygu Yoğunluğu:</strong> Şiirde derin bir hüzün, çaresizlik, yalnızlık ve hislerini ifade edememenin verdiği sıkıntı hakimdir.</li>
+                <li><strong>Ses ve Ritim Yapısı:</strong> Garip akımının ilkesine uygun olarak ölçüsüz ve kafiyesiz yazılmış; ritim günlük konuşma dilinin doğallığıyla sağlanmıştır.</li>
+                <li><strong>Vurgu ve Tonlama:</strong> Soru cümleleri ve içten anlatım, şairin okuyucuyla birebir dertleştiği hissini uyandırır.</li>
+            </ol>
+        </div>
+
+        <!-- 3. Grup -->
+        <div class="card">
+            <h3>3. Şiirdeki Açık ve Örtük İletiler</h3>
+            <ol>
+                <li><strong>Açık İleti:</strong> Şair, hissettiği yoğun duyguları ve acıyı anlatmada kelimelerin yetersiz kaldığını doğrudan ifade eder.</li>
+                <li><strong>Örtük İleti 1:</strong> İnsanın iç dünyası ve ruhsal yaşantısı, dilin sınırlarını aşan derin bir yapıya sahiptir.</li>
+                <li><strong>Örtük İleti 2:</strong> Birey duygularını başkalarıyla paylaşmak istese de en nihayetinde yalnızlığıyla baş başadır.</li>
+            </ol>
+        </div>
+
+        <!-- 4. Grup -->
+        <div class="card">
+            <h3>4. Edebiyatın Diğer Disiplinlerle İlişkisi</h3>
+            <ol>
+                <li><strong>Psikoloji:</strong> İnsanın içsel bunalımları, ifade edilemeyen ruhsal acıları ve yalnızlık duygusu psikoloji bilimiyle ilişkilidir.</li>
+                <li><strong>Felsefe:</strong> Dilin ve iletişimin sınırları, varoluşsal çaresizlik teması üzerinden felsefeyle bağ kurulur.</li>
+                <li><strong>Sosyoloji:</strong> Modern kent yaşamındaki bireyin toplum içinde yaşadığı yabancılaşma ve iletişim koptuğu yansıtılır.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slayt Modu Görünümü -->
+    <div id="slideView" class="slide-view">
+        <div class="slide-content" id="slideContent">
+            <!-- JavaScript ile doldurulacak -->
+        </div>
+        <div class="slide-controls">
+            <button class="slide-btn" id="prevBtn" onclick="changeSlide(-1)">← Önceki Slayt</button>
+            <span id="slideIndicator">1 / 4</span>
+            <button class="slide-btn" id="nextBtn" onclick="changeSlide(1)">Sonraki Slayt →</button>
+        </div>
+    </div>
+
+    <footer>
+        9. Sınıf Türk Dili ve Edebiyatı - Zihin Haritası Sunum Projesi
+    </footer>
+</div>
+
+<script>
+    const slides = [
+        {
+            title: "1. İmgeler, Çağrışımlar ve Söz Sanatları",
+            items: [
+                "<strong>İmgeler ve Çağrışımlar:</strong> 'Mısralarda duyulan ses' ve 'gözyaşlarına dokunabilme' ifadeleriyle yalnızlık, çaresizlik ve anlaşılma arzusu çağrıştırılır.",
+                "<strong>Tecahül-i Ârif (Bilmezlikten Gelme):</strong> <em>'Bilmeyezdim şarkıların bu kadar güzel / Kelimelerinse kifayetsiz olduğunu'</em> dizelerinde bildiği gerçeği bilmezlikten gelir.",
+                "<strong>İstifham (Soru Sorma):</strong> <em>'Ağlasam sesimi duyar mısınız...?'</em> ve <em>'Dokunabilir misiniz...?'</em> sorularıyla şair okuyucuya yönelerek duygu yoğunluğunu artırır."
+            ]
+        },
+        {
+            title: "2. Duygular ile Ses, Ritim ve Vurgu İlişkisi",
+            items: [
+                "<strong>Duygu Yoğunluğu:</strong> Şiirde derin bir hüzün, çaresizlik, yalnızlık ve hislerini ifade edememenin verdiği sıkıntı hakimdir.",
+                "<strong>Ses ve Ritim Yapısı:</strong> Garip akımının ilkesine uygun olarak ölçüsüz ve kafiyesiz yazılmış; ritim günlük konuşma dilinin doğallığıyla sağlanmıştır.",
+                "<strong>Vurgu ve Tonlama:</strong> Soru cümleleri ve içten anlatım, şairin okuyucuyla birebir dertleştiği hissini uyandırır."
+            ]
+        },
+        {
+            title: "3. Şiirdeki Açık ve Örtük İletiler",
+            items: [
+                "<strong>Açık İleti:</strong> Şair, hissettiği yoğun duyguları ve acıyı anlatmada kelimelerin yetersiz kaldığını doğrudan ifade eder.",
+                "<strong>Örtük İleti 1:</strong> İnsanın iç dünyası ve ruhsal yaşantısı, dilin sınırlarını aşan derin bir yapıya sahiptir.",
+                "<strong>Örtük İleti 2:</strong> Birey duygularını başkalarıyla paylaşmak istese de en nihayetinde yalnızlığıyla baş başadır."
+            ]
+        },
+        {
+            title: "4. Edebiyatın Diğer Disiplinlerle İlişkisi",
+            items: [
+                "<strong>Psikoloji:</strong> İnsanın içsel bunalımları, ifade edilemeyen ruhsal acıları ve yalnızlık duygusu psikoloji bilimiyle ilişkilidir.",
+                "<strong>Felsefe:</strong> Dilin ve iletişimin sınırları, varoluşsal çaresizlik teması üzerinden felsefeyle bağ kurulur.",
+                "<strong>Sosyoloji:</strong> Modern kent yaşamındaki bireyin toplum içinde yaşadığı yabancılaşma ve iletişim kopukluğu yansıtılır."
+            ]
+        }
+    ];
+
+    let currentSlide = 0;
+
+    function switchView(view) {
+        const gridView = document.getElementById('gridView');
+        const slideView = document.getElementById('slideView');
+        const buttons = document.querySelectorAll('.tab-btn');
+
+        if (view === 'grid') {
+            gridView.style.display = 'grid';
+            slideView.style.display = 'none';
+            buttons[0].classList.add('active');
+            buttons[1].classList.remove('active');
+        } else {
+            gridView.style.display = 'none';
+            slideView.style.display = 'block';
+            buttons[0].classList.remove('active');
+            buttons[1].classList.add('active');
+            renderSlide();
+        }
+    }
+
+    function renderSlide() {
+        const slide = slides[currentSlide];
+        const slideContent = document.getElementById('slideContent');
+        
+        let itemsHtml = slide.items.map(item => `<li>${item}</li>`).join('');
+        
+        slideContent.innerHTML = `
+            <h3>${slide.title}</h3>
+            <ol>${itemsHtml}</ol>
+        `;
+
+        document.getElementById('slideIndicator').innerText = `${currentSlide + 1} / ${slides.length}`;
+        document.getElementById('prevBtn').disabled = currentSlide === 0;
+        document.getElementById('nextBtn').disabled = currentSlide === slides.length - 1;
+    }
+
+    function changeSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = 0;
+        if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+        renderSlide();
+    }
+</script>
+
+</body>
+</html>
