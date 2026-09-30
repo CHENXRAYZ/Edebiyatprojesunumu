@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badminton Sporunun Detaylı Tarihçesi - 10 Dakikalık Sunum</title>
+    <title>Orhan Veli - Anlatamıyorum Şiiri Zihin Haritası Sunumu</title>
     <style>
         :root {
-            --primary-color: #1a365d;
-            --accent-color: #2b6cb0;
-            --highlight-color: #d69e2e;
-            --bg-color: #edf2f7;
+            --bg-color: #f4f6f8;
             --card-bg: #ffffff;
-            --text-color: #2d3748;
+            --main-color: #2b4c7e;
+            --accent-color: #3b7a57;
+            --text-color: #333333;
         }
 
         * {
@@ -21,141 +20,110 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.8;
+            line-height: 1.7;
             padding: 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            background: var(--main-color);
             color: white;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
         }
 
         header h1 {
-            font-size: 2.4em;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            font-size: 2em;
+            margin-bottom: 5px;
         }
 
         header p {
-            opacity: 0.95;
-            font-size: 1.15em;
-            font-weight: 300;
+            font-size: 1.1em;
+            opacity: 0.9;
         }
 
-        .presentation-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-            font-size: 0.95em;
-            background: rgba(255,255,255,0.15);
-            padding: 8px 16px;
-            border-radius: 20px;
-            display: inline-flex;
+        .poem-box {
+            background: #eef3f8;
+            border-left: 5px solid var(--main-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
         }
 
-        /* Tarihçe Kartları */
-        .timeline {
+        .poem-box h2 {
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+
+        .poem-text {
+            font-style: italic;
+            font-size: 1.05em;
+            white-space: pre-line;
+            line-height: 1.8;
+        }
+
+        .grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
         }
 
-        .era-card {
+        .card {
             background: var(--card-bg);
-            border-left: 8px solid var(--accent-color);
-            border-radius: 12px;
-            padding: 30px 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .era-card:hover {
-            transform: translateY(-4px);
+            border-radius: 8px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent-color);
         }
 
         .speaker-badge {
             display: inline-block;
-            background: #ebf8ff;
+            background: #eef8f2;
             color: var(--accent-color);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
             font-weight: bold;
-            margin-bottom: 12px;
-            border: 1px solid #bee3f8;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
 
-        .time-estimate {
+        .time-badge {
             float: right;
-            color: #718096;
+            color: #777;
             font-size: 0.85em;
-            font-weight: 600;
         }
 
-        .era-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 18px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+        .card h3 {
+            color: var(--main-color);
+            margin-bottom: 12px;
+            font-size: 1.3em;
             clear: both;
         }
 
-        .era-card p {
-            margin-bottom: 15px;
-            color: #4a5568;
-            font-size: 1.08em;
-            text-align: justify;
+        .card ol {
+            padding-left: 20px;
         }
 
-        .era-card ul {
-            padding-left: 22px;
-            margin-top: 12px;
-            margin-bottom: 15px;
-        }
-
-        .era-card li {
+        .card li {
             margin-bottom: 10px;
-            color: #4a5568;
-            font-size: 1.05em;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .fun-fact {
-            background: #fefcbf;
-            border-left: 4px solid var(--highlight-color);
-            padding: 12px 18px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.98em;
-            color: #744210;
+            font-size: 1.02em;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 25px;
-            color: #718096;
-            font-size: 0.95em;
-            border-top: 1px solid #cbd5e0;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -163,97 +131,110 @@
 
 <div class="container">
     <header>
-        <h1>BADMİNTON SPORUNUN KAPSAMLI TARİHÇESİ</h1>
-        <p>Antik Çağlardan Olimpiyat Podyumlarına 2000 Yıllık Yolculuk</p>
-        <div class="presentation-info">
-            <span>⏱ Toplam Süre: ~10 Dakika</span>
-            <span>👥 6 Kişilik Grup Sunumu</span>
-        </div>
+        <h1>ORHAN VELİ - ANLATAMIYORUM</h1>
+        <p>9. Sınıf Türk Dili ve Edebiyatı Ders Sunumu (Grup Çalışması)</p>
     </header>
 
-    <div class="timeline">
+    <!-- Şiir Metni -->
+    <div class="poem-box">
+        <h2>ANLATAMIYORUM</h2>
+        <div class="poem-text">
+Ağlasam sesimi duyar mısınız,
+Mısralarımda;
+Dokunabilir misiniz,
+Gözyaşlarıma, ellerinizle?
 
-        <!-- 1. KONUŞMACI -->
-        <div class="era-card">
+Bilmezdim şarkıların bu kadar güzel,
+Kelimelerinse kifayetsiz olduğunu
+Bu诞de düşmeden önce.
+
+Bir yer var, biliyorum;
+Her şeyi söylemek mümkün;
+Epeyce yaklaşmışım, duyuyorum;
+Anlatamıyorum.
+        </div>
+        <p style="margin-top: 10px; font-weight: bold; color: #555;">— Orhan Veli Kanık</p>
+    </div>
+
+    <!-- 6 Kişilik Sunum Metni -->
+    <div class="grid">
+
+        <!-- 1. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">1. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~1.5 Dakika</span>
-            <h2>1. Antik Çağlar ve Asya'daki İlkel Kökenler</h2>
-            <p>Değerli öğretmenim ve sevgili arkadaşlarım, bugün sizlere dünyanın en hızlı ve en eski raket sporu olan badmintonun yaklaşık 2000 yıllık köklü tarihçesini anlatacağız.</p>
-            <p>Badminton tek bir günde veya tek bir kişi tarafından icat edilmemiştir. İnsanlığın top ve raket benzeri nesnelerle oynama tutkusu antik medeniyetlere kadar uzanır. M.Ö. 500'lü yıllarda <span class="highlight">Antik Çin</span>'de oynanan ve <span class="highlight">"Ti Jian Zi"</span> adı verilen oyun, bu sporun bilinen en eski atası sayılır. Bu oyunda oyuncular raket kullanmadan, ayakları ve vücutlarının çeşitli bölgeleriyle kaz tüylerinden yapılmış özel bir topu yere düşürmemeye çalışırlardı.</p>
-            <p>Aynı dönemlerde Antik Yunanistan, Mısır ve Hindistan'da da tahtadan yapılmış ilkel raketlerle tüylü topların birbirine atıldığı oyunlar oynandığı arkeolojik kabartmalarda ve tarihi belgelerde görülmektedir. Tüm bu oyunların ortak amacı; yerçekimine karşı koyarak topu olabildiğince uzun süre havada tutmaktı.</p>
-            <div class="fun-fact">
-                💡 <strong>İlginç Bilgi:</strong> Çin'deki "Ti Jian Zi" oyunu günümüzde hâlâ Asya'da ayak badmintonu (Shuttlecock kicking) adıyla geleneksel bir spor olarak oynanmaktadır.
-            </div>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>Giriş, Şiir ve Şair Hakkında Genel Bilgi</h3>
+            <ol>
+                <li><strong>Giriş:</strong> Arkadaşlar merhaba, biz bugün edebiyat dersimiz için Orhan Veli Kanık'ın en ünlü şiirlerinden biri olan "Anlatamıyorum" şiirinin zihin haritası incelemesini sunacağız.</li>
+                <li><strong>Garip Akımı:</strong> Orhan Veli, edebiyatımızda Garip akımının öncüsüdür. Eski şiirdeki süslü lafları, ölçüyü ve kafiyeyi bir kenara bırakıp günlük konuşma diliyle halkın içinden şiirler yazmıştır.</li>
+                <li><strong>Şiirin Genel Havası:</strong> Bu şiirde şair, kendi içinde yaşadığı o derin yalnızlığı ve ne yaparsa yapsın içindekileri dışarıya tam aktaramama sıkıntısını anlatıyor. Şimdi sözü arkadaşıma bırakıyorum.</li>
+            </ol>
         </div>
 
-        <!-- 2. KONUŞMACI -->
-        <div class="era-card">
+        <!-- 2. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">2. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~1.5 Dakika</span>
-            <h2>2. Orta Çağ Avrupa'sı ve "Battledore & Shuttlecock" Oyunları</h2>
-            <p>Doğu'da ortaya çıkan bu gelenek, ticaret yolları ve gezginler aracılığıyla Orta Çağ döneminde Avrupa'ya taşınmıştır. 16. ve 17. yüzyıllara gelindiğinde Avrupa'nın krallık saraylarında, özellikle <span class="highlight">İngiltere, Fransa ve İsveç</span> soyluları arasında çok popüler bir eğlence haline gelmiştir.</p>
-            <p>Bu dönemde oyun <span class="highlight">"Battledore and Shuttlecock"</span> adıyla anılıyordu. Oyundaki nesneler şöyleydi:</p>
-            <ul>
-                <li><span class="highlight">Battledore:</span> Deri kaplı veya küçük tahtalardan yapılmış hafif raketler.</li>
-                <li><span class="highlight">Shuttlecock:</span> Kurutulmuş mantar tıpasına saplanmış gerçek kaz tüyleri (günümüz tüy topu).</li>
-            </ul>
-            <p>Ancak bu oyun günümüzdeki gibi bir sahada veya filenin üzerinden oynanmıyordu. Ortada bir file yoktu, kazanma veya kaybetme kaygısı bulunmuyordu. Amacımız, iki veya daha fazla kişinin paslaşarak topu yere düşürmeden yüzlerce kez havada tutmasıydı. Fransa Kralı XIV. Louis'nin sarayında bu oyunun saatlerce oynandığı tarihi kayıtlara geçmiştir.</p>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>1. Grup: İmgeler, Çağrışımlar ve Söz Sanatları</h3>
+            <ol>
+                <li><strong>İmgeler ve Çağrışımlar:</strong> Şiirdeki "mısralarda ses duyulması" veya "gözyaşına elle dokunulması" gibi imgeler bize şairin ne kadar yalnız olduğunu ve çaresizce birilerine ulaşmak istediğini çağrıştırıyor.</li>
+                <li><strong>Tecahül-i Ârif Sanatı:</strong> Şair "Bilmeyezdim şarkıların bu kadar güzel, kelimelerinse kifayetsiz olduğunu" derken aslında durumu çok iyi biliyor ama bilmezlikten gelerek lafın etkisini artırıyor.</li>
+                <li><strong>İstifham (Soru Sorma) Sanatı:</strong> "Ağlasam sesimi duyar mısınız mısralarımda?" derken aslında cevap beklemiyor, kendi içindeki çaresizliği bize soru sorarak hissettirmeye çalışıyor.</li>
+            </ol>
         </div>
 
-        <!-- 3. KONUŞMACI -->
-        <div class="era-card">
+        <!-- 3. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">3. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~1.5 Dakika</span>
-            <h2>3. Hindistan Kenti Pune ve Modern Oyunun Doğuşu: "Poona"</h2>
-            <p>Sporun serüveninde kırılma noktası 19. yüzyılın ortalarında yaşanmıştır. İngiliz İmparatorluğu'nun sömürgesi olan Hindistan'ın <span class="highlight">Pune (Poona)</span> şehrinde konuşlanan İngiliz subayları, yerel halkın oynadığı tüylü top oyunlarını gözlemlediler.</p>
-            <p>İngiliz subaylar 1860'lı yıllarda geleneksel eğlence oyununa rekabetçi bir ruh katmak istediler. Oyuna tarihte ilk kez:</p>
-            <ul>
-                <li>Saha ortasına gerilen <span class="highlight">yüksek bir file (ağ)</span>,</li>
-                <li>Puanlama sistemi ve saha sınır çizgileri eklediler.</li>
-            </ul>
-            <p>Şehrin adından esinlenerek oyuna <span class="highlight">"Poona"</span> adı verildi. Sıcak Hindistan ikliminde akşam üstü kulüplerde oynanan Poona, kısa sürede subaylar arasında büyük bir tutkuya dönüştü. Böylece paslaşmaya dayalı oyun, rekabete dayalı gerçek bir spora dönüştü.</p>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>2. Grup: Duygular ile Ses, Ritim ve Vurgu İlişkisi</h3>
+            <ol>
+                <li><strong>Şiirdeki Ana Duygu:</strong> Şiiri okuduğumuzda içimize bir hüzün, yalnızlık ve dertleşme isteği oturuyor. Şair çok samimi bir dille dert anlatır gibi yazmış.</li>
+                <li><strong>Ritim ve Ölçü:</strong> Garip akımına uygun olarak hece ölçüsü veya aruz kullanılmamış, serbest yazılmıştır. Ritim tamamen bizim günlük konuşma tempomuzla sağlanmıştır.</li>
+                <li><strong>Vurgu ve Tonlama:</strong> Şiirin sonundaki "Anlatamıyorum" kelimesi tek başına bir dize olarak yazılmış. Şair orada durup nefes almamızı ve o çaresizliği iyice hissetmemizi istemiş.</li>
+            </ol>
         </div>
 
-        <!-- 4. KONUŞMACI -->
-        <div class="era-card">
+        <!-- 4. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">4. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~1.5 Dakika</span>
-            <h2>4. "Badminton House" Malikanesi ve İsmin Tescillenmesi</h2>
-            <p>Hindistan'da görev süresi dolan İngiliz subayları 1870'lerin başında memleketlerine döndüklerinde Poona oyununun ekipmanlarını ve kurallarını yanlarında getirdiler.</p>
-            <p>1873 yılında, Beaufort Dükü'nün İngiltere'nin Gloucestershire bölgesinde bulunan ünlü <span class="highlight">"Badminton House"</span> adlı malikanesinde büyük bir kır bahçesi partisi düzenlendi. Dük, Hindistan'dan dönen subaylardan misafirlerine bu yeni oyunu sergilemelerini rica etti.</p>
-            <p>Saray mensupları ve İngiliz aristokrasisi oyuna adeta hayran kaldı. Malikanede düzenlenen bu tarihi gösterinin ardından oyun, sosyete arasında "Badminton malikanesindeki oyun" olarak anılmaya başlandı ve zamanla sporun resmi adı <span class="highlight">"Badminton"</span> olarak tescillendi.</p>
-            <div class="fun-fact">
-                💡 <strong>Tarihi Ayrıntı:</strong> İlk Badminton House maçlarında kullanılan fileler günümüzdeki gibi dikdörtgen değil, malikanenin salon mimarisine uyması için saat kadehi (kum saati) biçimindeydi.
-            </div>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>3. Grup: Şiirdeki Açık ve Örtük İletiler</h3>
+            <ol>
+                <li><strong>Açık İleti:</strong> Şairin bize doğrudan söylediği şey: Bazen insanın canı o kadar acır veya hisleri o kadar yoğunlaşır ki kelimeler bunu anlatmaya yetmez.</li>
+                <li><strong>Örtük İleti 1:</strong> Şiirde gizli olan birinci anlam; ne kadar kalabalıklar içinde olursak olalım veya ne kadar dert anlatırsak anlatalım, insan aslında kendi hisleriyle baş başadır.</li>
+                <li><strong>Örtük İleti 2:</strong> Sanat ve şiir bile insanın içindeki gerçek acıyı tam olarak dışarı vurmaya yetmeyebilir, kelimelerin de bir sınırı vardır.</li>
+            </ol>
         </div>
 
-        <!-- 5. KONUŞMACI -->
-        <div class="era-card">
+        <!-- 5. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">5. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~2 Dakika</span>
-            <h2>5. Kurallaşma Süreci, Kulüpler ve Uluslararası Federasyon (BWF)</h2>
-            <p>Badminton İngiltere geneline ve ardından tüm Avrupa'ya hızla yayılmaya başlayınca, her kulübün farklı sahalarda farklı kurallarla oynaması bir kargaşa yarattı. Bu durum resmi kurumların kurulmasını zorunlu kıldı:</p>
-            <ul>
-                <li><span class="highlight">1893:</span> İngiltere Badminton Birligi (BAE) kuruldu ve dünyadaki ilk resmi badminton kural kitabı yayımlandı. Saha ölçüleri ve file yüksekliği standartlaştırıldı.</li>
-                <li><span class="highlight">1899:</span> Dünyanın en eski ve prestijli badminton turnuvası olan **All England Open Badminton Şampiyonası** düzenlenmeye başlandı.</li>
-                <li><span class="highlight">1934:</span> Kanada, Danimarka, İngiltere, Fransa, İrlanda, Hollanda, Yeni Zelanda, İskoçya ve Galler bir araya gelerek Uluslararası Badminton Federasyonu'nu (IBF) kurdu. (Bu kurumun adı bugün **BWF - Dünya Badminton Federasyonu**'dur).</li>
-            </ul>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>4. Grup: Edebiyatın Diğer Disiplinlerle İlişkisi</h3>
+            <ol>
+                <li><strong>Psikoloji İlişkisi:</strong> İnsanın içsel bunalımları, ifade edemediği duyguları ve yalnızlık hissi doğrudan psikoloji biliminin konusudur. Şiir tamamen bir ruh halini yansıtıyor.</li>
+                <li><strong>Felsefe İlişkisi:</strong> İletişimin ve dilin sınırları, varoluşsal çaresizlik gibi konular felsefeyle ilgilidir. Şair kelimelerin yetersizliğini sorgulayarak felsefi bir derinlik yakalamış.</li>
+                <li><strong>Sosyoloji İlişkisi:</strong> Şehirde yaşayan modern insanın toplum içinde kalabalıklar arasındayken bile kendini yalnız hissetmesi ve iletişim kopukluğu sosyoloji ile bağ kuruyor.</li>
+            </ol>
         </div>
 
-        <!-- 6. KONUŞMACI -->
-        <div class="era-card">
+        <!-- 6. KİŞİ -->
+        <div class="card">
             <span class="speaker-badge">6. KONUŞMACI</span>
-            <span class="time-estimate">⏱ ~2 Dakika</span>
-            <h2>6. Olimpiyatlara Giriş, Asya Üstünlüğü ve Günümüz Badmintonu</h2>
-            <p>Sporun küreselleşmesiyle birlikte Asya ülkeleri, özellikle Çin, Endonezya, Malezya ve Güney Kore badmintona inanılmaz bir yatırım yaptılar. Esneklik, hız ve reaksiyon avantajları sayesinde Asyalı sporcular dünya genelinde hakimiyet kurdular.</p>
-            <p>Badminton Olimpiyat Oyunları serüvenine 1972 Münih ve 1988 Seul Olimpiyatları'nda gösteri sporu olarak dahil oldu. Sergilenen müthiş tempo ve izleyici ilgisi sayesinde <span class="highlight">1992 Barselona Olimpiyat Oyunları</span>'nda resmi olimpik branş kabul edildi.</p>
-            <p>Özetlemek gerekirse; antik çağlarda ayakla vurulan tüylü bir topla başlayan bu yolculuk, bugün smaç hızının saatte 493 km/s ile dünya rekoru kırdığı, dünyanın en hızlı ve dinamik raket sporu olarak milyarlarca insan tarafından oynanmaktadır. Bizi dinlediğiniz için teşekkür ederiz!</p>
+            <span class="time-badge">⏱ ~1.5 Dakika</span>
+            <h3>Özet ve Değerlendirme (Kapanış)</h3>
+            <ol>
+                <li><strong>Neden Bu Şiir Çok Seviliyor?:</strong> Orhan Veli çok basit kelimeler kullanmış ama hepimizin zaman zaman hissettiği ama kelimelere dökemediği bir duyguyu tam kalbinden yakalamış.</li>
+                <li><strong>Şiirin Bize Hissettirdikleri:</strong> Şiiri okurken hepimiz "Evet, ben de bazen derdimi anlatamıyorum" diyoruz. İşte bu sadelik şiiri ölümsüz yapıyor.</li>
+                <li><strong>Kapanış:</strong> Bizim zihin haritası sunumumuz bu kadardı. Sorusu olan varsa cevaplayabiliriz. Bizi dinlediğiniz için teşekkür ederiz!</li>
+            </ol>
         </div>
 
     </div>
 
     <footer>
-        9. Sınıf Beden Eğitimi ve Spor Dersi — Badminton Tarihçesi Sunumu
+        9. Sınıf Türk Dili ve Edebiyatı - Zihin Haritası Çalışması
     </footer>
 </div>
 
