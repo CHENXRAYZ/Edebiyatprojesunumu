@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orhan Veli - Anlatamıyorum Şiiri Zihin Haritası Sunumu</title>
+    <title>Anlatamıyorum - Zihin Haritası Sunumu</title>
     <style>
         :root {
-            --bg-color: #f4f6f8;
-            --card-bg: #ffffff;
-            --main-color: #2b4c7e;
-            --accent-color: #3b7a57;
-            --text-color: #333333;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --main-green: #84cc16;
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-sub: #cbd5e1;
         }
 
         * {
@@ -22,108 +23,132 @@
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding: 20px;
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 25px;
         }
 
         .container {
-            max-width: 950px;
+            max-width: 1050px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            background: var(--main-color);
-            color: white;
             padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            background: #1e293b;
+            border: 3px solid var(--main-green);
+            border-radius: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
         header h1 {
-            font-size: 2em;
-            margin-bottom: 5px;
+            font-size: 2.5em;
+            color: var(--main-green);
+            margin-bottom: 8px;
         }
 
         header p {
-            font-size: 1.1em;
-            opacity: 0.9;
+            font-size: 1.25em;
+            color: var(--text-sub);
         }
 
+        /* Tahtada Şiir Kutusu */
         .poem-box {
-            background: #eef3f8;
-            border-left: 5px solid var(--main-color);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            background: #1e293b;
+            border-left: 8px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .poem-box h2 {
-            color: var(--main-color);
-            margin-bottom: 10px;
+        .poem-title {
+            font-size: 1.7em;
+            color: #f59e0b;
+            margin-bottom: 12px;
+            font-weight: bold;
         }
 
         .poem-text {
+            font-size: 1.3em;
             font-style: italic;
-            font-size: 1.05em;
-            white-space: pre-line;
-            line-height: 1.8;
+            line-height: 2;
+            color: #f1f5f9;
         }
 
-        .grid {
+        /* 4 Ana Grup Kartı */
+        .cards-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 35px;
         }
 
         .card {
             background: var(--card-bg);
-            border-radius: 8px;
-            padding: 22px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--accent-color);
+            border-left: 10px solid var(--main-green);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
         }
 
-        .speaker-badge {
-            display: inline-block;
-            background: #eef8f2;
-            color: var(--accent-color);
-            font-weight: bold;
-            padding: 4px 12px;
+        .card-header {
+            border-bottom: 2px solid #334155;
+            padding-bottom: 15px;
+            margin-bottom: 22px;
+        }
+
+        .group-badge {
+            background: var(--main-green);
+            color: #0f172a;
+            padding: 6px 18px;
             border-radius: 15px;
-            font-size: 0.9em;
+            font-weight: bold;
+            font-size: 1.15em;
+            display: inline-block;
+        }
+
+        .card h2 {
+            font-size: 1.75em;
+            color: #f8fafc;
+            margin-top: 12px;
+        }
+
+        /* Madde Kutusu Yapısı */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .item {
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 10px;
+            padding: 20px 24px;
+        }
+
+        .item-title {
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.25em;
             margin-bottom: 10px;
         }
 
-        .time-badge {
-            float: right;
-            color: #777;
-            font-size: 0.85em;
-        }
-
-        .card h3 {
-            color: var(--main-color);
-            margin-bottom: 12px;
-            font-size: 1.3em;
-            clear: both;
-        }
-
-        .card ol {
-            padding-left: 20px;
-        }
-
-        .card li {
-            margin-bottom: 10px;
-            font-size: 1.02em;
+        .item-text {
+            color: var(--text-sub);
+            font-size: 1.15em;
+            line-height: 1.8;
+            text-align: justify;
         }
 
         footer {
             text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9em;
+            margin-top: 45px;
+            color: #64748b;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -131,110 +156,160 @@
 
 <div class="container">
     <header>
-        <h1>ORHAN VELİ - ANLATAMIYORUM</h1>
-        <p>9. Sınıf Türk Dili ve Edebiyatı Ders Sunumu (Grup Çalışması)</p>
+        <h1>ZİHİN HARİTASI SUNUMU</h1>
+        <p>Şiirin Adı: Anlatamıyorum — Orhan Veli Kanık</p>
     </header>
 
-    <!-- Şiir Metni -->
+    <!-- Tahtada Dursun -->
     <div class="poem-box">
-        <h2>ANLATAMIYORUM</h2>
+        <div class="poem-title">ANLATAMIYORUM</div>
         <div class="poem-text">
 Ağlasam sesimi duyar mısınız,
 Mısralarımda;
 Dokunabilir misiniz,
-Gözyaşlarıma, ellerinizle?
+Gözyaşlarına, ellerinizle?
 
 Bilmezdim şarkıların bu kadar güzel,
 Kelimelerinse kifayetsiz olduğunu
-Bu诞de düşmeden önce.
+Bu诞erke düşmeden önce.
 
 Bir yer var, biliyorum;
 Her şeyi söylemek mümkün;
 Epeyce yaklaşmışım, duyuyorum;
 Anlatamıyorum.
         </div>
-        <p style="margin-top: 10px; font-weight: bold; color: #555;">— Orhan Veli Kanık</p>
     </div>
 
-    <!-- 6 Kişilik Sunum Metni -->
-    <div class="grid">
+    <div class="cards-container">
 
-        <!-- 1. KİŞİ -->
+        <!-- 1. GRUP -->
         <div class="card">
-            <span class="speaker-badge">1. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>Giriş, Şiir ve Şair Hakkında Genel Bilgi</h3>
-            <ol>
-                <li><strong>Giriş:</strong> Arkadaşlar merhaba, biz bugün edebiyat dersimiz için Orhan Veli Kanık'ın en ünlü şiirlerinden biri olan "Anlatamıyorum" şiirinin zihin haritası incelemesini sunacağız.</li>
-                <li><strong>Garip Akımı:</strong> Orhan Veli, edebiyatımızda Garip akımının öncüsüdür. Eski şiirdeki süslü lafları, ölçüyü ve kafiyeyi bir kenara bırakıp günlük konuşma diliyle halkın içinden şiirler yazmıştır.</li>
-                <li><strong>Şiirin Genel Havası:</strong> Bu şiirde şair, kendi içinde yaşadığı o derin yalnızlığı ve ne yaparsa yapsın içindekileri dışarıya tam aktaramama sıkıntısını anlatıyor. Şimdi sözü arkadaşıma bırakıyorum.</li>
-            </ol>
+            <div class="card-header">
+                <span class="group-badge">1. GRUP</span>
+                <h2>İmgeler, Çağrışımlar ve Söz Sanatlarıyla İlgili Unsurlar</h2>
+            </div>
+
+            <div class="item-list">
+                <div class="item">
+                    <div class="item-title">Şiirdeki İmgeler ve Çağrışımlar</div>
+                    <div class="item-text">
+                        "Mısralarda sesini duyurmak" ve "gözyaşlarına elle dokunmak" ifadeleri şairin oluşturduğu temel imgelerdir. Orhan Veli, soyut bir kavram olan üzüntüyü ve çaresizlik duygusunu, sanki dokunulabilir veya duyulabilir somut bir nesneymiş gibi anlatmıştır. Bu kelimeler okuyucuda yalnızlığı, çaresizliği ve anlaşılma isteğini çağrıştırmaktadır.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Tecahül-i Ârif (Bilmezlikten Gelme) Sanatı</div>
+                    <div class="item-text">
+                        Şair "Bilmezdim şarkıların bu kadar güzel, kelimelerinse kifayetsiz olduğunu bu derde düşmeden önce" derken aslında kelimelerin yetersiz kaldığını çok iyi bilmektedir. Ancak yaşadığı duygunun ne kadar ağır olduğunu ve derdinin büyüklüğünü anlatabilmek için bilmiyormuş gibi davranarak tecahül-i ârif sanatına başvurmuştur.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">İstifham (Soru Sorma) Sanatı</div>
+                    <div class="item-text">
+                        "Ağlasam sesimi duyar mısınız mısralarımda? Dokunabilir misiniz gözyaşlarıma ellerinizle?" dizelerinde şair okuyucuya doğrudan sorular sormaktadır. Buradaki amaç bir cevap almak değildir. Şair soru sorarak okuyucuyu kendi iç dünyasına çekmeyi ve yaşadığı çaresizliğe ortak etmeyi hedeflemiştir.
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- 2. KİŞİ -->
+        <!-- 2. GRUP -->
         <div class="card">
-            <span class="speaker-badge">2. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>1. Grup: İmgeler, Çağrışımlar ve Söz Sanatları</h3>
-            <ol>
-                <li><strong>İmgeler ve Çağrışımlar:</strong> Şiirdeki "mısralarda ses duyulması" veya "gözyaşına elle dokunulması" gibi imgeler bize şairin ne kadar yalnız olduğunu ve çaresizce birilerine ulaşmak istediğini çağrıştırıyor.</li>
-                <li><strong>Tecahül-i Ârif Sanatı:</strong> Şair "Bilmeyezdim şarkıların bu kadar güzel, kelimelerinse kifayetsiz olduğunu" derken aslında durumu çok iyi biliyor ama bilmezlikten gelerek lafın etkisini artırıyor.</li>
-                <li><strong>İstifham (Soru Sorma) Sanatı:</strong> "Ağlasam sesimi duyar mısınız mısralarımda?" derken aslında cevap beklemiyor, kendi içindeki çaresizliği bize soru sorarak hissettirmeye çalışıyor.</li>
-            </ol>
+            <div class="card-header">
+                <span class="group-badge">2. GRUP</span>
+                <h2>Duygular ile Ses, Ritim ve Vurgu İlişkisi</h2>
+            </div>
+
+            <div class="item-list">
+                <div class="item">
+                    <div class="item-title">Şiirin Oluşturduğu Temel Duygular</div>
+                    <div class="item-text">
+                        Şiiri okuduğumuzda öne çıkan ana duygular hüzün, çaresizlik, yalnızlık ve insanın içindeki duyguları dışarıya aktaramamasının verdiği içsel sıkıntıdır. Şair içini döküp rahatlamak istemekte fakat kelimelerin yetersizliği ona engel olmaktadır.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Serbest Ölçü ve Doğal Ritim</div>
+                    <div class="item-text">
+                        Orhan Veli, Garip akımının öncüsü olduğu için bu şiirde hece veya aruz ölçüsü kullanmamıştır. Şiir tamamen serbest ölçüyle yazılmıştır. Ritim ve ahenk; yapay kafiyelerle değil, günlük konuşma dilinin sadeliği, kelime tekrarları ve cümleler arasındaki doğal duraklarla sağlanmıştır.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Vurgu ve Tonlama Yapısı</div>
+                    <div class="item-text">
+                        Şiirin tonlaması yapmacıklıktan uzak, son derece sakin ve samimidir. Yüksek ve coşkulu bir bağırış yoktur; aksine kısık sesle yapılmış bir iç döküş havası hakimdir. Şiirin başındaki soru cümlelerinde tonlama hafifçe yükselirken, en sondaki tek kelimelik "Anlatamıyorum" dizesinde tonlama düşer ve çaresiz bir teslimiyet vurgulanır.
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- 3. KİŞİ -->
+        <!-- 3. GRUP -->
         <div class="card">
-            <span class="speaker-badge">3. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>2. Grup: Duygular ile Ses, Ritim ve Vurgu İlişkisi</h3>
-            <ol>
-                <li><strong>Şiirdeki Ana Duygu:</strong> Şiiri okuduğumuzda içimize bir hüzün, yalnızlık ve dertleşme isteği oturuyor. Şair çok samimi bir dille dert anlatır gibi yazmış.</li>
-                <li><strong>Ritim ve Ölçü:</strong> Garip akımına uygun olarak hece ölçüsü veya aruz kullanılmamış, serbest yazılmıştır. Ritim tamamen bizim günlük konuşma tempomuzla sağlanmıştır.</li>
-                <li><strong>Vurgu ve Tonlama:</strong> Şiirin sonundaki "Anlatamıyorum" kelimesi tek başına bir dize olarak yazılmış. Şair orada durup nefes almamızı ve o çaresizliği iyice hissetmemizi istemiş.</li>
-            </ol>
+            <div class="card-header">
+                <span class="group-badge">3. GRUP</span>
+                <h2>Şiirdeki Açık ve Örtük İletiler</h2>
+            </div>
+
+            <div class="item-list">
+                <div class="item">
+                    <div class="item-title">Açık İleti (Doğrudan Mesaj)</div>
+                    <div class="item-text">
+                        Şairin yoğun duygular içinde olması ve bu hissettiklerini kelimelere döküp başkalarına aktarırken zorlanmasıdır. Şair ne kadar çabalarsa çabalasın derdini ve içindeki sıkıntıyı insanlara tam olarak anlatamadığını açıkça söyler.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Örtük İleti: Dilin ve Kelimelerin Sınırı</div>
+                    <div class="item-text">
+                        İnsan dili ve kelimeler, insanın iç dünyasındaki derin ve karmaşık hisleri anlatmaya her zaman yetmez. İnsan bazen öyle hisler yaşar ki en güçlü edebiyat veya şiir bile o duyguyu tam anlamıyla tarif etmeye yetmez.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Örtük İleti: Bireysel Yalnızlık</div>
+                    <div class="item-text">
+                        İnsan etrafında insanlar olsa bile kendi iç dünyasında ve yaşadığı acılarda özünde yapayalnızdır. Şair acısını mısralara yazsa bile kimse o mısralardaki gözyaşına tam anlamıyla dokunamaz ve o duyguyu birebir hissedemez.
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- 4. KİŞİ -->
+        <!-- 4. GRUP -->
         <div class="card">
-            <span class="speaker-badge">4. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>3. Grup: Şiirdeki Açık ve Örtük İletiler</h3>
-            <ol>
-                <li><strong>Açık İleti:</strong> Şairin bize doğrudan söylediği şey: Bazen insanın canı o kadar acır veya hisleri o kadar yoğunlaşır ki kelimeler bunu anlatmaya yetmez.</li>
-                <li><strong>Örtük İleti 1:</strong> Şiirde gizli olan birinci anlam; ne kadar kalabalıklar içinde olursak olalım veya ne kadar dert anlatırsak anlatalım, insan aslında kendi hisleriyle baş başadır.</li>
-                <li><strong>Örtük İleti 2:</strong> Sanat ve şiir bile insanın içindeki gerçek acıyı tam olarak dışarı vurmaya yetmeyebilir, kelimelerin de bir sınırı vardır.</li>
-            </ol>
-        </div>
+            <div class="card-header">
+                <span class="group-badge">4. GRUP</span>
+                <h2>Edebiyatın Diğer Disiplinlerle İlişkisini İçeren Unsurlar</h2>
+            </div>
 
-        <!-- 5. KİŞİ -->
-        <div class="card">
-            <span class="speaker-badge">5. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>4. Grup: Edebiyatın Diğer Disiplinlerle İlişkisi</h3>
-            <ol>
-                <li><strong>Psikoloji İlişkisi:</strong> İnsanın içsel bunalımları, ifade edemediği duyguları ve yalnızlık hissi doğrudan psikoloji biliminin konusudur. Şiir tamamen bir ruh halini yansıtıyor.</li>
-                <li><strong>Felsefe İlişkisi:</strong> İletişimin ve dilin sınırları, varoluşsal çaresizlik gibi konular felsefeyle ilgilidir. Şair kelimelerin yetersizliğini sorgulayarak felsefi bir derinlik yakalamış.</li>
-                <li><strong>Sosyoloji İlişkisi:</strong> Şehirde yaşayan modern insanın toplum içinde kalabalıklar arasındayken bile kendini yalnız hissetmesi ve iletişim kopukluğu sosyoloji ile bağ kuruyor.</li>
-            </ol>
-        </div>
+            <div class="item-list">
+                <div class="item">
+                    <div class="item-title">Psikoloji Bilimi ile İlişkisi</div>
+                    <div class="item-text">
+                        Şiir doğrudan insanın ruh haline, duygusal dünyasına ve ifade edilemeyen ruhsal sıkıntılarına odaklanır. Bir insanın iç dünyasını dışa vurma çabası ve bunu başaramayınca yaşadığı yalnızlık duygusu psikoloji biliminin temel inceleme alanlarındandır.
+                    </div>
+                </div>
 
-        <!-- 6. KİŞİ -->
-        <div class="card">
-            <span class="speaker-badge">6. KONUŞMACI</span>
-            <span class="time-badge">⏱ ~1.5 Dakika</span>
-            <h3>Özet ve Değerlendirme (Kapanış)</h3>
-            <ol>
-                <li><strong>Neden Bu Şiir Çok Seviliyor?:</strong> Orhan Veli çok basit kelimeler kullanmış ama hepimizin zaman zaman hissettiği ama kelimelere dökemediği bir duyguyu tam kalbinden yakalamış.</li>
-                <li><strong>Şiirin Bize Hissettirdikleri:</strong> Şiiri okurken hepimiz "Evet, ben de bazen derdimi anlatamıyorum" diyoruz. İşte bu sadelik şiiri ölümsüz yapıyor.</li>
-                <li><strong>Kapanış:</strong> Bizim zihin haritası sunumumuz bu kadardı. Sorusu olan varsa cevaplayabiliriz. Bizi dinlediğiniz için teşekkür ederiz!</li>
-            </ol>
+                <div class="item">
+                    <div class="item-title">Felsefe (Varoluşçuluk) ile İlişkisi</div>
+                    <div class="item-text">
+                        İletişimin imkânsızlığı, dilin sınırları ve insanın varoluşsal yalnızlığı felsefi konulardır. Şairin "Bir yer var biliyorum, her şeyi söylemek mümkün" diyerek aradığı yer, felsefi bir anlam arayışını ve ideal bir varoluş alanını temsil etmektedir.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Sosyoloji Bilimi ile İlişkisi</div>
+                    <div class="item-text">
+                        Modern şehir hayatında yaşayan insanların birbirleriyle olan iletişim kopukluğu ve toplum içinde yalnızlaşması sosyolojik bir durumdur. Şiir, insanların aynı dili konuşmalarına rağmen birbirlerini anlayamaması gerçeğine değinmektedir.
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        9. Sınıf Türk Dili ve Edebiyatı - Zihin Haritası Çalışması
+        Türk Dili ve Edebiyatı Ders Ödevi — Akıllı Tahta Sunumu
     </footer>
 </div>
 
